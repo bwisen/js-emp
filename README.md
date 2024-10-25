@@ -16,10 +16,10 @@ node js-emp/js-emp.js
 ## modes:
 | mode | desc |
 | ------ | ------ |
-| semicolon | replaces every ; character to ; |
-| quotmark | replaces every " character to “ |
-| paren | replaces every ( character to （ |
-| all | loops through every mode |
+| semicolon | replace every ; character to ; |
+| quotmark | replace every " character to “ |
+| paren | replace every ( character to （ |
+| all | loop through every mode |
 
 ## commands:
 | command | desc |
