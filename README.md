@@ -24,8 +24,8 @@ node js-emp/js-emp.js
 ## commands:
 | command | desc |
 | ------ | ------ |
-| ls | lists files in the current working directory. |
-| modes | lists the modes.. |
-| mode <name> | changes the current mode. |
-| emp <file path \| all> | calls the emp function. |
+| ls | list files in the current working directory. |
+| modes | list the modes.. |
+| mode <name> | change the current mode. |
+| emp <file path \| all> | call the emp function. |
 > using `emp all` will broke every file in the directory tree.
