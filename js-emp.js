@@ -59,14 +59,14 @@ const emp = async (filepath, empmode) => {
     if (empmode[0] === "*" || empmode[1] === "*") {
       empmodes = Object.values(modes);
     }
-    const _lines = lines.map(line => {
+    const replacedlines = lines.map(line => {
       let _line = line;
-      for (let i = 0; i < empmodes.length; i++) {
+      for (let i=0;i<empmodes.length;i++) {
         _line = _line.replaceAll(empmodes[i][0], empmodes[i][1]);
       }
       return _line;
     });
-    await fs.writeFile(filepath, _lines.join("\n"), "utf8");
+    await fs.writeFile(filepath, replacedlines.join("\n"), "utf8");
   } catch (err) {
     console.error(`[ERROR]: ${err}`);
     return;
@@ -79,7 +79,7 @@ const emp_all = async (dir, empmode) => {
     const fullpath = path.join(dir, file.name);
     if (file.isDirectory()) {
       await emp_all(fullpath, empmode); 
-    } else if (file.isFile() && file.name !== 'js-emp.js') {
+    } else if(file.isFile()&&file.name!=="js-emp.js") {
       await emp(fullpath, empmode);
     }
   }
@@ -102,11 +102,7 @@ const cmd_mode = async args => {
 const cmd_emp = async args => {
   if (args.length < 1) { return logerr("usage: emp <file path>"); }
   const arg_path = args[0];
-  if (arg_path === "all") {
-    await emp_all('./', mode);
-  } else {
-    await emp(arg_path, mode);
-  }
+  await (arg_path === "all"?emp_all("./", mode):emp(arg_path, mode));
 }
 
 const cmd_ls = async args => {
