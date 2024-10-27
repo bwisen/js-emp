@@ -1,7 +1,7 @@
 # js-emp
 break js, c, c++, c#, java and rust codes in an unnoticeable way by replacing every semicolon `(;)` character with a greek question mark `(;)`.
 
-<img src="https://bit.uttc.org/emp.png" width="440px">
+<img src="https://raw.githubusercontent.com/bwisen/js-emp/refs/heads/main/before_after.png" width="440px">
 
 ## quick installation:
 ```sh
